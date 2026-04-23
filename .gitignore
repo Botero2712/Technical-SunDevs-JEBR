@@ -4,3 +4,9 @@ backend/dist/
 frontend/dist/
 .env
 .DS_Store
+
+frontend/dist-ssr/
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+frontend/*.local
