@@ -8,6 +8,14 @@ Este documento describe las decisiones técnicas, enfoque y criterios utilizados
 
 Se diseñó una arquitectura fullstack desacoplada, separando claramente las responsabilidades entre el backend y el frontend. Bajo este enfoque, el backend se encarga de obtener, procesar, transformar y entregar los datos en una estructura limpia y lista para ser consumida, mientras que el frontend se enfoca en presentar esa información al usuario de una manera clara, ordenada y visualmente entendible.
 
+La decisión de separar ambas capas permite que cada parte del sistema tenga un propósito específico. El backend concentra la lógica relacionada con el tratamiento de datos, como la lectura del archivo mock, la limpieza de la información original, el cálculo del nivel de hype y la construcción del JSON final. De esta forma, el frontend no necesita conocer la estructura completa de los datos originales ni repetir reglas de negocio.
+
+Por su parte, el frontend consume la respuesta ya procesada y se encarga de la experiencia visual del usuario. Allí se manejan aspectos como la renderización de tarjetas, el estado de carga, el manejo de errores y la lógica visual asociada al nivel de hype, como la identificación de la categoría Crown Jewel. Esto permite mantener una interfaz más flexible y enfocada en la presentación.
+
+Aunque se trata de una arquitectura simple, resulta adecuada para el alcance de la prueba técnica, ya que cumple con los requerimientos sin agregar complejidad innecesaria. Se priorizó una solución clara, mantenible y fácil de revisar, evitando sobreingeniería o dependencias que no aportaran valor directo al objetivo del proyecto.
+
+Además, este enfoque permite que el proyecto pueda escalar de forma ordenada en el futuro. Por ejemplo, el archivo mock podría ser reemplazado por una API real, el cálculo del hype podría ajustarse con nuevas reglas y el frontend podría incorporar filtros, ordenamientos o nuevas vistas sin modificar completamente la estructura base del sistema.
+
 ---
 
 ##  Decisiones técnicas principales
